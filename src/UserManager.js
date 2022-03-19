@@ -11,7 +11,7 @@ export const UserManager = () => {
   const [users, setUsers] = useState([])
 
   useEffect(() => {
-    axios.get('https://users-crud1.herokuapp.com/swagger/')
+    axios.get('https://users-crud1.herokuapp.com/users/')
       .then(res => setUsers(res.data))
     
   }, [])

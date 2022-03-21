@@ -1,8 +1,8 @@
 import React from 'react'
 
-const UserList = ({users}) => {
+const UserList = ({users, userSelect}) => {
 
-  console.log(users)
+ //console.log(users)
 
   return (
  
@@ -27,7 +27,7 @@ const UserList = ({users}) => {
                   <td>{user.password}</td>
                   <td>{user.birthday}</td>
                   <td className='options-user'>
-                    <button className='btn-edit circle'>
+                    <button className='btn-edit circle' onClick={() => userSelect(user)}>
                       <i className="fa-solid fa-pen"></i>
                       </button>
                     &nbsp;

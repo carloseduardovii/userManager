@@ -9,6 +9,7 @@ import UserList from './Components/UserList'
 export const UserManager = () => {
 
   const [users, setUsers] = useState([])
+  const [selectUser, setSelectUser] = useState(null)
   
   const getUsers = () => {
     axios.get('https://users-crud1.herokuapp.com/users/')
@@ -20,6 +21,11 @@ export const UserManager = () => {
   }, [])
   //console.log(users)
 
+
+  const userSelect = user => setSelectUser(user) 
+
+  
+
   return (
     <>
     <div className='toolbar'>
@@ -30,9 +36,9 @@ export const UserManager = () => {
     </div>
 
    
-    <UserForm getUsers={getUsers}/>
+    <UserForm getUsers={getUsers} selectUser={selectUser}/>
     
-    <UserList users={users}/>
+    <UserList users={users} userSelect={userSelect}/>
 
     </>
   )

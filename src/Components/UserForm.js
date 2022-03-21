@@ -9,14 +9,14 @@ const UserForm = ({getUsers, selectUser}) => {
   useEffect(() => {
         if(selectUser){
                 const userSelectedEdit = {
-                        first_name: selectUser.firstname,
-                        last_name: selectUser.lastname,
+                        firstname: selectUser.first_name,
+                        lastname: selectUser.last_name,
                         email: selectUser.email,
                         password: selectUser.password,
                         birthday: selectUser.birthday
-                }
+                        }
 
-                reset(userSelectedEdit)
+                        reset(userSelectedEdit)
                 }
    }, [selectUser, reset])
 

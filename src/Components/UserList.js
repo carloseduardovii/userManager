@@ -1,8 +1,30 @@
 import React from 'react'
+import Swal from 'sweetalert2'
 
-const UserList = ({users, userSelect}) => {
+const UserList = ({users, userSelect, deleteUser}) => {
 
- //console.log(users)
+
+  const userDelete  = (id) => {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        deleteUser(id)
+        Swal.fire(
+          'Deleted!',
+          'Your file has been deleted.',
+          'success'
+        )
+      }
+    })
+  }
+  
 
   return (
  
@@ -31,7 +53,7 @@ const UserList = ({users, userSelect}) => {
                       <i className="fa-solid fa-pen"></i>
                       </button>
                     &nbsp;
-                    <button className='btn-delete circle'>
+                    <button className='btn-delete circle' onClick={() => userDelete(user.id)}>
                       <i className="fa-solid fa-trash"></i>
                       </button>
                   </td>

@@ -1,10 +1,10 @@
 import axios from 'axios';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 
-const UserForm = ({getUsers, selectUser}) => {
+const UserForm = ({getUsers, selectUser, unSelectUser}) => {
    
-  const { register, handleSubmit, reset } = useForm();
+  const { register, handleSubmit, reset  } = useForm();
 
   useEffect(() => {
         if(selectUser){
@@ -20,7 +20,7 @@ const UserForm = ({getUsers, selectUser}) => {
                 }
    }, [selectUser, reset])
 
-  const submit = (data) => {
+  const submit = (data, e) => {
         //console.log(data)
         const userInfo = {
                 first_name: data.firstname,
@@ -30,8 +30,18 @@ const UserForm = ({getUsers, selectUser}) => {
                 birthday: data.birthday
         }
 
-        axios.post('https://users-crud1.herokuapp.com/users/', userInfo)
-                .then(() => getUsers())
+        if(selectUser){
+                axios.put(`https://users-crud1.herokuapp.com/users/${selectUser.id}/`, userInfo)
+                        .then(() => {getUsers()
+                                     unSelectUser()
+                })
+                        
+        }else{
+                axios.post('https://users-crud1.herokuapp.com/users/', userInfo)
+                        .then(() => getUsers())
+        }
+
+        e.target.reset()
   }
 
   
@@ -65,7 +75,7 @@ const UserForm = ({getUsers, selectUser}) => {
       {/* Birtheday */}
       <input  type="text" 
               name='birthday'
-              placeholder='Birthday'
+              placeholder='Birthday (AAAA-MM-DD)'
               {...register("birthday")}/>
 
       {/* User Register */}

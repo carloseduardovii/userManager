@@ -5,7 +5,6 @@ import UserList from './Components/UserList'
 
 
 
-
 export const UserManager = () => {
 
   const [users, setUsers] = useState([])
@@ -24,6 +23,13 @@ export const UserManager = () => {
 
   const userSelect = user => setSelectUser(user) 
 
+  const unSelectUser = () => setSelectUser(null)
+
+  const deleteUser = id => {
+    axios.delete(`https://users-crud1.herokuapp.com/users/${id}`)
+    .then(() => getUsers())
+  } 
+    
   
 
   return (
@@ -36,9 +42,9 @@ export const UserManager = () => {
     </div>
 
    
-    <UserForm getUsers={getUsers} selectUser={selectUser}/>
+    <UserForm getUsers={getUsers} selectUser={selectUser} unSelectUser={unSelectUser}/>
     
-    <UserList users={users} userSelect={userSelect}/>
+    <UserList users={users} userSelect={userSelect} deleteUser={deleteUser}/>
 
     </>
   )

@@ -1,40 +1,64 @@
-import React from 'react'
+import axios from 'axios';
+import { useForm } from 'react-hook-form';
 
-const UserForm = () => {
+const UserForm = ({getUsers}) => {
+   
+  const { register, handleSubmit } = useForm();
+
+  const submit = (data) => {
+        //console.log(data)
+        const userInfo = {
+                first_name: data.firstname,
+                last_name: data.lastname,
+                email: data.email,
+                password: data.password,
+                birthday: data.birthday
+        }
+
+        axios.post('https://users-crud1.herokuapp.com/users/', userInfo)
+                .then(() => getUsers())
+  }
+
+  
   return (
     <div className='form-container'>
-    <form >
+    <form onSubmit={handleSubmit(submit)}>
       {/* First Name */}
       <input  type="text" 
-              id='Description' 
-              placeholder='Name'/>
+              name='firstname'
+              placeholder='Name'
+              {...register("firstname")}/>
 
       {/* Last Name */}  
       <input  type="text" 
-              id='Description' 
-              placeholder='Last Name'/>
+              name='lastname'
+              placeholder='Last Name'
+              {...register("lastname")}/>
 
       {/* e-mail */}
       <input  type="text" 
-              id='Description' 
-              placeholder='e-mail'/>
+              name='email'
+              placeholder='e-mail'
+              {...register("email")}/>
 
       {/* Password */}
       <input  type="text" 
-              id='Description' 
-              placeholder='Password'/>
+              name='password'
+              placeholder='Password'
+              {...register("password")}/>
 
       {/* Birtheday */}
       <input  type="text" 
-              id='Description' 
-              placeholder='Birthday'/>
+              name='birthday'
+              placeholder='Birthday'
+              {...register("birthday")}/>
 
       {/* User Register */}
-      <input  type="Submit" 
-              value='User Register'/>
+      <input  type="submit" 
+              value='User Register'
+              />
                     
     </form>
-        
 
     </div>
   )

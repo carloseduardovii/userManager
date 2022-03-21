@@ -7,7 +7,7 @@ const UserList = ({users}) => {
   return (
  
       <table>
-        {/* <caption className='table-title'>User Manager</caption> */}
+        <caption className='table-title'>User Manager</caption>
           <thead>
             <tr className='head-title'>
               <th>Name</th>

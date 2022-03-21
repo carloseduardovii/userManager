@@ -9,11 +9,14 @@ import UserList from './Components/UserList'
 export const UserManager = () => {
 
   const [users, setUsers] = useState([])
-
-  useEffect(() => {
+  
+  const getUsers = () => {
     axios.get('https://users-crud1.herokuapp.com/users/')
       .then(res => setUsers(res.data))
-    
+  }
+
+  useEffect(() => {
+    getUsers()
   }, [])
   //console.log(users)
 
@@ -27,7 +30,7 @@ export const UserManager = () => {
     </div>
 
    
-    <UserForm/>
+    <UserForm getUsers={getUsers}/>
     
     <UserList users={users}/>
 

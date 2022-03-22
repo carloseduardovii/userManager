@@ -11,29 +11,45 @@
 
 body{
     font-family: 'Spartan', sans-serif;
+    background-image: url('https://img.freepik.com/vector-gratis/fondo-paisaje-bosque-crepuscular-silueta_1308-67749.jpg?w=740');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-#root{
+/* #root{
     align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     margin-top: 20px;
+} */
+
+.general-list{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
 }
+
 
 /*---------------------Button--------------------*/
 .toolbar{
     align-items: center;
-    background-color:#FCF7FF;
+    justify-content: center;
+    background-image: url('https://img.freepik.com/vector-gratis/fondo-paisaje-bosque-crepuscular-silueta_1308-69379.jpg?t=st=1647910053~exp=1647910653~hmac=cb847643be9f16eb993c24c9e5d59bf28269eb87b468841a5319cca2d17b29f4&w=740');
+    background-position: top;
+    opacity: .7;
     border: 1 px solid black;
+    box-shadow: 2px 4px 6px 7px rgb(0,0,0,.3);
     border-radius: 5px;
     display: flex;
-    justify-content: flex-start;
-    padding: 5px;
-    margin-bottom: 15px;
+    padding: 10px;
     width: 90%;
     height: 50px;
+    
 }
+
 
 .btnplus i{
     font-size: 12px;
@@ -43,30 +59,44 @@ button{
     font-size: 12PX;
 }
 
-.btnplus{
+/* .btnplus{
     border: none;
     border-radius: 5px;
-    background-color: #0088FF;
+    background-color: #330057;
     color: white;
     height: 30px;
     width: 70px;
     transition: all 350ms;
-}
+} */
 
-.btnplus:hover{
+/* .btnplus:hover{
     background-color:#006CFF;
-}
+} */
 
 
 /*---------------------UserForm--------------------*/
 
+.general{
+    padding: 20px;
+    width: 360px;
+}
+
 .form-container{
-   width: 90%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    /* background-color: #672989; */
+    background-image: url('https://img.freepik.com/vector-gratis/fondo-paisaje-bosque-crepuscular-silueta_1308-69379.jpg?t=st=1647910053~exp=1647910653~hmac=cb847643be9f16eb993c24c9e5d59bf28269eb87b468841a5319cca2d17b29f4&w=740');
+    background-position: 50%;
+    opacity: .9;
+    box-shadow: 2px 4px 6px 7px rgb(0,0,0,.3);
+    height: 320px;
+    border-radius: 10px;
 }
 
 form{
-    height: 200px;
-    width: 100%;
+    width: 90%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -74,55 +104,65 @@ form{
 
 input[type='text'],input[type='submit']{
     border-radius: 5px;
-    border: 1px solid black;
+    border: 1px solid #672989;
     padding: 5px;
     margin-top: 10px;
 }
 
 input[type='submit']{
     border: none;
-    background-color: #0088FF;
+    background-color: #4E0E70;
     color: white;
     cursor: pointer;
     font-weight: bold;
     transition: all 350ms;
 }
 input[type='submit']:hover{
-    background-color: #006CFF;
+    background-color: #330057;
 }
 input[type='submit']:active{
-    background-color: 2px solid #173FE4;
+    background-color: 2px solid #330057;
 }
 
 /*---------------------UserList--------------------*/
 
-table{
-    margin-top: 40px;
+.table-user{
+    padding: 10px;
     width: 95%;
     font-size: 10px;
+    margin-top: 0;
+    background-color: #330057;
+    background-image: url('https://img.freepik.com/vector-gratis/fondo-paisaje-bosque-crepuscular-silueta_1308-69379.jpg?t=st=1647910053~exp=1647910653~hmac=cb847643be9f16eb993c24c9e5d59bf28269eb87b468841a5319cca2d17b29f4&w=740');
+    background-position: 50%;
+    box-shadow: 2px 4px 6px 7px rgb(0,0,0,.5);
+    border-radius: 10px;
+    margin-top: 30px;
+
 }
 
 .head-title{
     padding: 5px;
     text-align: start;
     line-height: 30px;
-    background-color: #00CDF7;
-    border-top: #006CFF;
-    border-bottom: #006CFF;
+    background-color: #330057;
+    border-top: 1px solid #C29FD1;
+    color: #FCF7FF;
 }
 
 th{
-    border-bottom: 1px solid #006CFF;
+    border-bottom: 1px solid #672989;
     font-size: 7px;
 }
 
 td{
     border-bottom: 1px solid #DFEEF0;
-    background-color: whitesmoke;
+    background-color: #672989;
+   
     text-align: start;
     padding: 3px;
     height: 30px;
     font-size: 7px;
+    color: #FCF7FF;
 }
 
 .circle{
@@ -132,8 +172,8 @@ td{
 .options-user{
     display: flex;
     width: 60px;
-    border-bottom: 1px solid #DFEEF0;
-    background-color: whitesmoke;
+
+    background-color: transparent;
     border-bottom: none;
     justify-content: center;
     align-items: center;
@@ -168,6 +208,22 @@ td{
 }
 .btn-delete:hover{
     background-color: #C22400;
+}
+
+/* /footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  
+ 
+} */
+
+footer p{
+    margin-top: 20px;
+    padding: 5px;
+    color: #FCF7FF;
+    text-align: center;
 }
 
 /*------------------RESPONSIVE-768------------------*/

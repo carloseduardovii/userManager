@@ -33,19 +33,28 @@ export const UserManager = () => {
   
 
   return (
-    <>
-    <div className='toolbar'>
-      <div className='toolbar-btn'>
-        <button className='btnplus'><i className="fa-solid fa-user-plus"></i> New</button>
+    <div>
+    <div className='general-list'>
+      <div className='toolbar'>
+        <h1>User Register APP</h1>
+        <div className='toolbar-btn'>
+          {/* <button className='btnplus'><i className="fa-solid fa-user-plus"></i> New</button> */}
+        </div>
+
       </div>
 
-    </div>
-
    
-    <UserForm getUsers={getUsers} selectUser={selectUser} unSelectUser={unSelectUser}/>
-    
-    <UserList users={users} userSelect={userSelect} deleteUser={deleteUser}/>
+      <UserForm getUsers={getUsers} selectUser={selectUser} unSelectUser={unSelectUser}/>
+      
+      <UserList users={users} userSelect={userSelect} deleteUser={deleteUser}/>
 
-    </>
+      
+    </div>
+    <footer>
+      <p>Copyright ©2022</p>
+      <p>❮'by Carlos Eduardo Rodriguez 2022'❯</p>
+    </footer>
+    </div>
+    
   )
 }

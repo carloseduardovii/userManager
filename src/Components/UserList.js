@@ -28,8 +28,8 @@ const UserList = ({users, userSelect, deleteUser}) => {
 
   return (
  
-      <table>
-        <caption className='table-title'>User Manager</caption>
+      <table className='table-user'>
+        {/* <caption className='table-title'>User List</caption> */}
           <thead>
             <tr className='head-title'>
               <th>Name</th>

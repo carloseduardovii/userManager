@@ -46,45 +46,47 @@ const UserForm = ({getUsers, selectUser, unSelectUser}) => {
 
   
   return (
+          <div className='general'>
     <div className='form-container'>
-    <form onSubmit={handleSubmit(submit)}>
-      {/* First Name */}
-      <input  type="text" 
-              name='firstname'
-              placeholder='Name'
-              {...register("firstname")}/>
+        <form onSubmit={handleSubmit(submit)}>
+        {/* First Name */}
+                <input  type="text" 
+                        name='firstname'
+                        placeholder='Name'
+                        {...register("firstname")}/>
 
-      {/* Last Name */}  
-      <input  type="text" 
-              name='lastname'
-              placeholder='Last Name'
-              {...register("lastname")}/>
+                {/* Last Name */}  
+                <input  type="text" 
+                        name='lastname'
+                        placeholder='Last Name'
+                        {...register("lastname")}/>
 
-      {/* e-mail */}
-      <input  type="text" 
-              name='email'
-              placeholder='e-mail'
-              {...register("email")}/>
+                {/* e-mail */}
+                <input  type="text" 
+                        name='email'
+                        placeholder='e-mail'
+                        {...register("email")}/>
 
-      {/* Password */}
-      <input  type="text" 
-              name='password'
-              placeholder='Password'
-              {...register("password")}/>
+                {/* Password */}
+                <input  type="text" 
+                        name='password'
+                        placeholder='Password'
+                        {...register("password")}/>
 
-      {/* Birtheday */}
-      <input  type="text" 
-              name='birthday'
-              placeholder='Birthday (AAAA-MM-DD)'
-              {...register("birthday")}/>
+                {/* Birtheday */}
+                <input  type="text" 
+                        name='birthday'
+                        placeholder='Birthday (AAAA-MM-DD)'
+                        {...register("birthday")}/>
 
-      {/* User Register */}
-      <input  type="submit" 
-              value='User Register'
-              />
-                    
-    </form>
+                {/* User Register */}
+                <input  type="submit" 
+                        value='Register'
+                        />
+                        
+        </form>
 
+    </div>
     </div>
   )
 }
